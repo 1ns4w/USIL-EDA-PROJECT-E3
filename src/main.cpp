@@ -1,8 +1,17 @@
-#include <iostream>
-using namespace std;
-
-int main()
+#ifndef __STACK_H__
+#define __STACK_H__
+#include "list.h"
+template <typename T>
+class Stack: public List<T>
 {
-  cout << "Hello, world!";
-  return 0;
-}
+public:
+    T pop(){
+        return List<T>::popFront();
+    }
+    void push(T data){
+        List<T>::pushFront(data);
+    }
+};
+
+
+#endif // __STACK_H__
